@@ -1,0 +1,32 @@
+
+---
+
+### 2. `requirements.txt`
+
+This file lists all the Python dependencies your project needs. Users can install them all with a single command.
+
+```text
+# FastAPI and Web Server
+fastapi
+uvicorn[standard]
+
+# GUI Framework
+customtkinter
+Pillow
+
+# Authentication and Security
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+
+# Database
+# (sqlite3 is built-in, no external package needed)
+
+# API Client
+requests
+
+# (Optional) For environment variable loading
+# python-dotenv
+
+# (Optional) For payment processing
+# stripe
