@@ -2,9 +2,9 @@
 
 GenMaster AI Studio is a comprehensive, full-stack desktop application for AI image generation, built entirely with Python. It features a modern user interface powered by CustomTkinter, a robust FastAPI backend for handling logic and API requests, and integrates with leading AI services like Stability AI and OpenAI (DALL-E).
 
-The application provides a complete user experience, including user authentication, a subscription and credits system with Stripe integration (stubs included), a personal image gallery, and advanced generation controls.
+The application provides a complete user experience, including user authentication, a subscription and credits system with Stripe integration, a personal image gallery, and advanced generation controls.
 
-
+![GenMaster AI Studio Interface](docs/images/Image1.png)
 
 ---
 
@@ -39,6 +39,16 @@ The application provides a complete user experience, including user authenticati
 
 ---
 
+## 📸 Screenshots
+
+| **Advanced Generation Controls (Dark Mode)** | **Personal Image Gallery** |
+|:----------------------------------------------:|:--------------------------:|
+| ![Generation Screen](docs/images/06.06.2025_06.05.17_REC.png) | ![Image Gallery](docs/images/06.06.2025_06.05.47_REC.png) |
+| **User Profile & Subscription Management** | **Plan Options (Dark Mode)** |
+| ![User Profile](docs/images/06.06.2025_06.06.10_REC.png) | ![Subscription Plans](docs/images/06.06.2025_06.06.49_REC.png) |
+
+---
+
 ## 🛠️ Setup and Installation
 
 Follow these steps to get the GenMaster AI Studio running on your local machine.
@@ -59,7 +69,17 @@ git clone https://github.com/your-username/genmaster-ai-studio.git
 cd genmaster-ai-studio
 ```
 
-### Step 2: Create a Virtual Environment
+### Step 2: Create Folders for Assets
+
+Create the necessary directories for images and UI icons.
+
+```bash
+# This command works on macOS, Linux, and modern Windows PowerShell
+mkdir -p docs/images ui_icons
+```
+Place your screenshot files in the `docs/images` folder.
+
+### Step 3: Create a Virtual Environment
 
 It's highly recommended to use a virtual environment to manage dependencies.
 
@@ -73,15 +93,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-### Step 3: Install Dependencies
+### Step 4: Install Dependencies
 
 The project's dependencies are listed below. Install them all using pip:
 
 ```bash
 pip install fastapi "uvicorn[standard]" customtkinter Pillow python-jose[cryptography] passlib[bcrypt] python-multipart requests
 ```
-
-Alternatively, you can copy the contents of the `requirements.txt` section below into a file and run `pip install -r requirements.txt`.
 
 <details>
 <summary><code>requirements.txt</code></summary>
@@ -105,7 +123,7 @@ requests
 ```
 </details>
 
-### Step 4: Configure Environment Variables
+### Step 5: Configure Environment Variables
 
 For the application to connect to the AI services, you must provide your API keys. The best way to do this is with an environment file.
 
@@ -149,23 +167,16 @@ STRIPE_CUSTOMER_PORTAL_LINK="YOUR_STRIPE_CUSTOMER_PORTAL_CONFIG_LINK_HERE"
 ```
 </details>
 
-### Step 5: Download UI Icons
+### Step 6: Download UI Icons
 
-The application looks for icons in a `ui_icons` directory. You will need to create this directory and add the necessary `.png` icon files. You can find suitable icons from sources like [Google Fonts Icons](https://fonts.google.com/icons).
+The application looks for icons in the `ui_icons` directory you created earlier. You will need to add the necessary `.png` icon files. You can find suitable icons from sources like [Google Fonts Icons](https://fonts.google.com/icons).
 
--   Create a directory named `ui_icons` in the project root.
--   Download and place the following icons (or equivalents) inside it:
+-   Download and place the following icons (or equivalents) inside the `ui_icons` folder:
     -   `palette_FILL0_wght400_GRAD0_opsz24.png` (for 'generate')
     -   `photo_library_FILL0_wght400_GRAD0_opsz24.png` (for 'gallery')
-    -   `workspace_premium_FILL0_wght400_GRAD0_opsz24.png` (for 'subscription')
-    -   `account_circle_FILL0_wght400_GRAD0_opsz24.png` (for 'profile')
-    -   `logout_FILL0_wght400_GRAD0_opsz24.png` (for 'logout')
-    -   `upload_file_FILL0_wght400_GRAD0_opsz24.png` (for 'upload')
-    -   `save_FILL0_wght400_GRAD0_opsz24.png` (for 'save')
-    -   `delete_FILL0_wght400_GRAD0_opsz24.png` (for 'delete')
-    -   `edit_FILL0_wght400_GRAD0_opsz24.png` (for 'edit')
+    -   ... and all other icons referenced in the script.
 
-### Step 6: Run the Application
+### Step 7: Run the Application
 
 Execute the main Python script. This will automatically start the FastAPI backend server and launch the CustomTkinter GUI.
 
@@ -218,16 +229,6 @@ __pycache__/
 .DS_Store
 ```
 </details>
-
-### Directory Overview
-
--   `your_main_script_name.py`: The single-file source code.
--   `.env`: Local environment configuration file (API keys, secrets).
--   `.gitignore`: Specifies files for Git to ignore.
--   `ai_generator_v3.db`: The SQLite database file (created automatically).
--   `generated_images_v3/`: Directory where generated images are saved.
--   `user_uploads_v3/`: Directory for user-uploaded content like avatars.
--   `ui_icons/`: Directory containing icons for the user interface.
 
 ---
 
